@@ -8,7 +8,7 @@ module SpreeFancy
       end
 
       def add_stylesheets
-        inject_into_file 'app/assets/stylesheets/store/all.css', " *= require store/spree_cocconutworks_theme\n", :before => /\*\//, :verbose => true
+        inject_into_file 'app/assets/stylesheets/store/all.css', " *= require store/spree_coconutworks_theme\n", :before => /\*\//, :verbose => true
         inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_coconutworks_theme\n", :before => /\*\//, :verbose => true
       end
 
