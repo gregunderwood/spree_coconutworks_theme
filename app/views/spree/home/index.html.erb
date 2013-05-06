@@ -1,0 +1,20 @@
+
+<div id="logo_container">
+    <%= image_tag "store/logo.png", :id => "logo" %>
+</div>
+
+<div class="container">
+  <% if @featured_products %>
+    <div id="featured-products" class="row">
+      <h3>Featured Products</h3>
+      <hr>
+      <ul class="carousel">
+        <% @featured_products.each do |product| %>
+          <%= render 'product', :product => product %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'slider' %>
