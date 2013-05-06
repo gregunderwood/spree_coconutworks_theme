@@ -1,0 +1,19 @@
+<!-- replace '#product-variants ul' -->
+<div class="variants-buttons">
+  <% has_checked = false
+  @product.variants.active(current_currency).each_with_index do |v,index|
+    checked = !has_checked
+    has_checked = true if checked %>
+    
+      <%= radio_button_tag "products[#{@product.id}]", v.id, checked, 'data-price' => v.price_in(current_currency).display_price %>
+      <label for="<%= ['products', @product.id, v.id].join('_') %>">
+        <span class="variant-description">
+          <%= variant_options v %>
+        </span>
+        <% if variant_price v %>
+          <span class="price diff"><%= variant_price v %></span>
+        <% end %>
+      </label>
+    
+  <% end%>
+</ul>
